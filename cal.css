@@ -168,7 +168,7 @@ body {
 /* Currency Converter Styling */
 #currency-converter {
     margin: 20px;
-    height: 200px;
+    height: 170px;
     text-align: center;
     background: #ffffff;
     padding: 20px;
@@ -288,7 +288,11 @@ body {
         min-height: 42px;
         font-size: clamp(14px, 1.5vw, 16px);
     }
+    #currency-converter{
+        height: 230px;
+    }
 }
+
 
 @media (max-width: 480px) {
     .calculator {
@@ -303,6 +307,9 @@ body {
     .button {
         min-height: 40px;
         font-size: clamp(12px, 1.2vw, 15px);
+    }
+    #currency-converter{
+        height: 280px;
     }
 }
 #history{
