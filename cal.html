@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator/Currency Converter</title>
+    <link rel="stylesheet" href="cal.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="navbar">
+        <div class="first-to">
+            
+            <button class="background">Mode</button>
+            <button id="toggle-button">Converter</button>
+            <button id="share-button"> <i class="fa-solid fa-share"></i></button>
+            
+           
+          
+        </div>
+    </div>
+       
+    <div class="second-to">
+       
+        <div class="calculator" id="calculator">
+          
+            <input type="text" id="display" disabled>
+            <div class="buttons">
+                <button class="button" id="mc">MC</button>
+                <button class="button" id="m+">M+</button>          
+                <button class="button" id="m-">M-</button>
+                <button class="button" id="mr">MR</button>
+                
+               
+
+
+                <button class="button" id="clear">AC</button>
+                <button class="button" id="backspace">DEL</button> 
+                
+                <button class="button" id="voice-button" style="background-color: rgb(150, 150, 190);">Voice</button>
+
+                      
+                <button class="button" id="history">HISTORY</button>
+                <button class="button" id="history clr">HIS CLR</button>
+                
+                <button class="button" id="precentage">%</button>
+                <button class="button" id="seven">7</button>
+                <button class="button" id="eight">8</button>
+                <button class="button" id="nine">9</button>
+        
+                <button class="button" id="multiply">*</button>
+                <button class="button" id="bar1">(</button>
+                <button class="button" id="bar2">)</button>
+                <button class="button" id="pi">π</button>
+                <button class="button" id="four">4</button>
+                <button class="button" id="five">5</button>
+                <button class="button" id="six">6</button>
+                <button class="button" id="subtract">-</button>
+                <button class="button" id="sin">SIN</button>
+                <button class="button" id="cos">COS</button>
+                <button class="button" id="tan">TAN</button>
+                <button class="button" id="one">1</button>
+                <button class="button" id="two">2</button>
+                <button class="button" id="three">3</button>
+                <button class="button" id="add">+</button>
+                <button class="button" id="root">SQRT</button>
+                
+                <button class="button" id="expo">EXPO</button>
+                <button class="button" id="log">LOG</button>
+                <button class="button" id="divide">/</button>   
+                
+                <button class="button" id="zero">0</button>
+                <button class="button" id="decimal">.</button>
+                <button class="button" id="equals">=</button>
+            </div>
+            <div id="history-display"></div>
+        </div>
+        <div class="currency-converter" id="currency-converter" style="display: none;">
+            <!-- Currency Converter HTML remains the same -->
+            <h3>Currency Converter</h3>
+            <input type="number" id="amount" placeholder="Enter amount" />
+            <select id="fromCurrency">
+                <option value="USD">USD</option>
+                <option value="INR">INR</option>
+                <option value="EUR">EUR</option>
+                <option value="GBP">GBP</option>
+            </select>
+            <span> to </span>
+            <select id="toCurrency">
+                <option value="INR">INR</option>
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+                <option value="GBP">GBP</option>
+            </select>
+            <button id="convertBtn">Convert</button>
+            <p id="conversionResult"></p>
+        </div>
+    </div>
+  
+
+    <script src="cal.js"></script>
+</body>
+</html>
