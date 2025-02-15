@@ -39,12 +39,14 @@ colorb.addEventListener("click", () => {
   
 });
 
+
+
+
+
+
 document.addEventListener("DOMContentLoaded", function () {
   const display = document.getElementById("display");
  
- 
- 
-
   function handleButtonClick(value) {
     try {
       if (value === "=" || value === "Enter") {
@@ -305,6 +307,82 @@ const currencyConversionRates = {
     EUR: 1.16
   }
 };
+ // Get the input elements
+// const amountInput = document.getElementById('amount');
+const convertButton = document.getElementById('convertBtn');
+
+// Add event listener for keyboard events
+document.addEventListener('keydown', (event) => {
+    // Check if the keys 1-9 are pressed
+    if (event.key >= 1 && event.key <= 9) {
+        // Append the pressed key to the amount input field
+        amountInput.value += event.key;
+    }
+
+    // Check if the Enter key is pressed
+    if (event.key === 'Enter') {
+        // Perform the conversion when the Enter key is pressed
+        convertCurrency();
+
+    }
+    // Check if the Backspace key is pressed
+    if (event.key === 'Backspace') {
+      // Delete the last character from the amount input field
+      amountInput.value = amountInput.value.slice(0, -1);
+  }
+});
+
+// Add event listener for convert button click
+convertButton.addEventListener('click', () => {
+    // Perform the conversion when the convert button is clicked
+    convertCurrency();
+});
+
+// Function to perform the currency conversion
+function convertCurrency() {
+    // Get the values from the input elements
+    const amount = amountInput.value;
+    const fromCurrency = document.getElementById('fromCurrency').value;
+    const toCurrency = document.getElementById('toCurrency').value;
+
+    // Perform the conversion using an API or a conversion formula
+    // For this example, we'll use a simple conversion formula
+    const conversionRate = getConversionRate(fromCurrency, toCurrency);
+    const convertedAmount = amount * conversionRate;
+
+    // Display the conversion result
+    document.getElementById('conversionResult').textContent = `${amount} ${fromCurrency} is equal to ${convertedAmount} ${toCurrency}`;
+}
+
+// Function to get the conversion rate
+function getConversionRate(fromCurrency, toCurrency) {
+    // This is a simple example and actual conversion rates may vary
+    // You can use an API to get the actual conversion rates
+    const conversionRates = {
+        'USD': {
+            'INR': 74.83,
+            'EUR': 0.88,
+            'GBP': 0.76
+        },
+        'INR': {
+            'USD': 0.013,
+            'EUR': 0.012,
+            'GBP': 0.010
+        },
+        'EUR': {
+            'USD': 1.14,
+            'INR': 84.23,
+            'GBP': 0.86
+        },
+        'GBP': {
+            'USD': 1.32,
+            'INR': 98.11,
+            'EUR': 1.16
+        }
+    };
+
+    return conversionRates[fromCurrency][toCurrency];
+}
 
 convertBtn.addEventListener('click', () => {
   const amount = parseFloat(amountInput.value);
@@ -339,4 +417,5 @@ convertBtn.addEventListener('click', () => {
          toggleButton.textContent = 'Calculator';
      }
  });
+
 
